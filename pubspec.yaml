@@ -1,8 +1,8 @@
-name: myapp
-description: "A new Flutter project."
+name: expense_tracker
+description: "A modern expense tracking application"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: 'none' # Rezove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -33,8 +33,28 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.8
-  image_picker: ^1.1.2
+  cupertino_icons: ^1.0.2
+  image_picker: ^1.0.7
+  http: ^1.2.0
+  mongo_dart: ^0.9.3
+  intl: ^0.19.0
+  pdf: ^3.10.7
+  path_provider: ^2.1.2
+  open_file: ^3.3.2
+  share_plus: ^7.2.1
+  fl_chart: ^0.66.2
+  shared_preferences: ^2.2.2
+  animated_flip_counter: ^0.3.4
+  path: ^1.9.1
+  http_parser: ^4.1.2
+  
+flutter_launcher_icons: "^0.9.0"
+
+flutter_icons:
+  image_path: "icon/icon.jpg" 
+  android: true
+  ios: true
+
 
 dev_dependencies:
   flutter_test:

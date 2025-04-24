@@ -1,0 +1,2 @@
+C:/Users/lenovo/Desktop/mad_ep/madlab/android/app/.cxx/Debug/11w45256/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/lenovo/Desktop/mad_ep/madlab/android/app/.cxx/Debug/11w45256/armeabi-v7a/CMakeFiles/rebuild_cache.dir
