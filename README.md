@@ -10,6 +10,7 @@
 - Sync data via a **Node.js + MongoDB backend**
 - Use the app offline with local persistence
 - Export expense reports as **PDF**
+- Made for web and App both Using Flutter
 
 It’s a modern budgeting companion built using best practices in mobile development and backend integration.
 
