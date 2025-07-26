@@ -102,12 +102,15 @@ It’s a modern budgeting companion built using best practices in mobile develop
 - Add Income / Expense  
 <img width="1434" height="650" alt="1753433065" src="https://github.com/user-attachments/assets/c1f7e68d-d191-4546-817f-bed29d321c2e" />
 <img width="1431" height="641" alt="1753433057" src="https://github.com/user-attachments/assets/face4889-9d6e-4618-a53b-ebd75440c425" />
+![income](https://github.com/user-attachments/assets/61334c0f-3cc5-46a6-86f3-ec4694b92acc)
+![expense](https://github.com/user-attachments/assets/0705d8f5-b368-4af8-a486-c8d33740443b)
 
 
 - Analytics Page  
 <img width="494" height="1099" alt="1753433042" src="https://github.com/user-attachments/assets/1bbd7663-3ae3-4479-8459-8da6f392f8a3" />
 
 - Expense Report
-- 
+  ![report](https://github.com/user-attachments/assets/04ea64aa-1e3e-4e8c-8cd2-d6b2860f6ac7)
+
 - Receipt Viewer(with pdf extraction feature)
 <img width="271" height="603" alt="1753433035" src="https://github.com/user-attachments/assets/6327adea-ab11-4df1-8691-23bdbd60608c" />
