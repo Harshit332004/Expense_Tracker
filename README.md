@@ -8,7 +8,6 @@
 - Upload and manage digital receipts
 - Secure their data using **Firebase Authentication**
 - Sync data via a **Node.js + MongoDB backend**
-- Use the app offline with local persistence
 - Export expense reports as **PDF**
 - Made for web and App both Using Flutter
 
