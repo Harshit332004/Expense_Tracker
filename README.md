@@ -98,11 +98,17 @@ It’s a modern budgeting companion built using best practices in mobile develop
 - Home Dashboard  
 <img width="448" height="994" alt="1753433021" src="https://github.com/user-attachments/assets/fb02880d-6d7d-486a-a702-d431780a4d06" />
 
-- Add Income / Expense  
+- Add Income / Expense
+  // FLutter web
 <img width="1434" height="650" alt="1753433065" src="https://github.com/user-attachments/assets/c1f7e68d-d191-4546-817f-bed29d321c2e" />
 <img width="1431" height="641" alt="1753433057" src="https://github.com/user-attachments/assets/face4889-9d6e-4618-a53b-ebd75440c425" />
-![income](https://github.com/user-attachments/assets/61334c0f-3cc5-46a6-86f3-ec4694b92acc)
-![expense](https://github.com/user-attachments/assets/0705d8f5-b368-4af8-a486-c8d33740443b)
+ //flutter app
+
+![expense](https://github.com/user-attachments/assets/73151c92-97cf-4789-afa1-86afea992150)
+
+![income](https://github.com/user-attachments/assets/485691a7-a6ef-4336-9feb-9afd30deb471)
+
+
 
 
 - Analytics Page  
