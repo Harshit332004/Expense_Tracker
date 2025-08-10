@@ -8,6 +8,8 @@ import dotenv from 'dotenv';
 // Load environment variables from .env file
 dotenv.config();
 
+process.env.GEMINI_API_KEY = "AIzaSyCCjwvcpLK6Ea4Up8bpYbvjEOTAETl3ZlE"; // Replace with your actual API key
+
 const app = express();
 app.use(express.json());
 app.use('/public/uploads', express.static('public/uploads'));
@@ -16,6 +18,9 @@ connectToDatabase();
 app.use(cors());
 app.use('/api/income', incomeRouter);
 app.use('/api/expenses', expenseRouter);
+
+import aiRoutes from './routes/ai.js'; // Note the .js extension
+app.use('/api/ai', aiRoutes);
 
 app.get('/', (req, res) => {
     res.send("hello world");

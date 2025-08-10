@@ -1,0 +1,215 @@
+.navbar_container {
+    height: 10vh !important;
+
+}
+
+.navbar {
+    background-color: rgb(49, 95, 182) !important;
+    height: 10vh !important;
+}
+
+.main_screen {
+    height: 90vh;
+    overflow: auto;
+    background-color: #fff;
+}
+
+.logo {
+    padding: 0;
+    height: 35px;
+    width: 120px;
+    margin-right: 10px;
+}
+
+.nav-link {
+    /* color: rgb(218, 218, 218) !important; */
+}
+
+.nav-item a.active {
+    color: white !important;
+}
+
+.carousel-inner {
+    height: 500px !important;
+}
+
+.caraousel_image {
+    height: 500px;
+    width: 100%;
+}
+
+.product_container {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-wrap: wrap;
+    /* margin-top: 5px; */
+}
+
+.section_header {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: flex;
+    justify-content: start;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: 'poppins';
+    color: rgb(22, 22, 22);
+}
+
+.card {
+    padding: 0 !important;
+}
+
+.grey {
+    background-color: rgb(211, 211, 211);
+}
+
+.card-text button {
+    width: 100%;
+}
+
+.wishlist_container {
+    margin-top: 13px;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: flex-start;
+    /* margin-right: 10px; */
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-wrap: wrap;
+
+}
+
+.previous_order_container {
+    /* margin-top: 20px; */
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    justify-content: flex-start;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-wrap: wrap;
+}
+
+.profile {
+    width: 600px;
+    margin: auto;
+}
+
+.search_result_container .card {
+    width: 800px;
+}
+
+.img_container img {
+    height: 100%;
+}
+
+.search_result_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.margin_custom img {
+    height: 200px;
+}
+
+.AIbutton {
+    height: 120px;
+    width: 120px;
+    border: none;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 30px;
+    left: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255);
+    z-index: 100;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.AIbutton video {
+    height: 120px;
+    width: 120px;
+}
+
+.whislist_btn {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    border-radius: 50%;
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+
+.height_set img {
+    height: 250px;
+}
+
+.output-div {
+    position: fixed;
+    max-height: 200px;
+    width: 385px;
+    right: 15px;
+    bottom: 100px;
+    z-index: 100;
+    border-radius: 10px;
+    background-color: rgb(240, 240, 240);
+    overflow: auto;
+    padding: 10px;
+    padding-top: 35px;
+    padding-bottom: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    display: flex;
+    align-items: center;
+}
+
+.close_btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    outline: none;
+}
+
+.container {
+    max-width: 1200px;
+    /* Adjust this to your layout */
+    margin: 0 auto;
+    padding: 0 0px 0 0;
+    /* Some padding on sides */
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.search_bar {
+    width: 300px;
+    /* Adjust this width based on your design */
+}
+
+/* Ensures search bar stays to the right with some space */
+@media (min-width: 1024px) {
+    .search_bar {
+        margin-right: 2rem;
+        /* Adjust spacing */
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar-toggler {
+        display: block;
+    }
+}

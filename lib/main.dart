@@ -9,6 +9,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'ip_config_screen.dart';
 import 'screens/settings_screen.dart';
 import 'package:animated_flip_counter/animated_flip_counter.dart';
+import 'components/voice_assistant_widget.dart';
+import 'components/voice_commands_help.dart';
+import 'services/voice_assistant_service.dart';
 
 void main() {
   runApp(const ExpenseTrackerApp());
@@ -98,6 +101,7 @@ class _ExpenseTrackerHomeState extends State<ExpenseTrackerHome> {
     'balance': 0.0,
     'month': DateTime.now().month,
   };
+  final VoiceAssistantService _voiceService = VoiceAssistantService();
   List<Map<String, dynamic>> expenses = [];
   bool isLoading = true;
   String selectedPeriod = 'Monthly';
@@ -156,6 +160,15 @@ class _ExpenseTrackerHomeState extends State<ExpenseTrackerHome> {
       appBar: AppBar(
         title: Text("Expense Tracker"),
         actions: [
+          IconButton(
+            icon: Icon(Icons.help),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => VoiceCommandsHelp()),
+              );
+            },
+          ),
           IconButton(
             icon: Icon(Icons.refresh),
             onPressed: _loadDashboardData,
@@ -256,45 +269,47 @@ class _ExpenseTrackerHomeState extends State<ExpenseTrackerHome> {
         child: const Icon(Icons.add, color: Colors.white),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      body: RefreshIndicator(
-        onRefresh: _loadDashboardData,
-        child: isLoading
-            ? Center(child: CircularProgressIndicator())
-            : SingleChildScrollView(
-                physics: AlwaysScrollableScrollPhysics(),
-                child: Column(
-                  children: [
-                    // Balance Card
-                    Container(
-                      width: double.infinity,
-                      margin: EdgeInsets.all(16),
-                      padding: EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                          colors: [Colors.deepPurple, Colors.deepPurple.shade700],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.deepPurple.withOpacity(0.3),
-                            blurRadius: 10,
-                            offset: Offset(0, 5),
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "Current Balance",
-                            style: TextStyle(
-                              color: Colors.white70,
-                              fontSize: 16,
+      body: Stack(
+        children: [
+          RefreshIndicator(
+            onRefresh: _loadDashboardData,
+            child: isLoading
+                ? Center(child: CircularProgressIndicator())
+                : SingleChildScrollView(
+                    physics: AlwaysScrollableScrollPhysics(),
+                    child: Column(
+                      children: [
+                        // Balance Card
+                        Container(
+                          width: double.infinity,
+                          margin: EdgeInsets.all(16),
+                          padding: EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              colors: [Colors.deepPurple, Colors.deepPurple.shade700],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
                             ),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.deepPurple.withOpacity(0.3),
+                                blurRadius: 10,
+                                offset: Offset(0, 5),
+                              ),
+                            ],
                           ),
-                          SizedBox(height: 8),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Current Balance",
+                                style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: 16,
+                                ),
+                              ),
+                              SizedBox(height: 8),
 AnimatedSwitcher(
   duration: Duration(milliseconds: 300),
   child: AnimatedFlipCounter(
@@ -514,6 +529,73 @@ AnimatedSwitcher(
                   ],
                 ),
               ),
+          ),
+          // Voice Assistant Widget
+          VoiceAssistantWidget(
+            onNavigateToDashboard: () {
+              setState(() {
+                _selectedIndex = 0;
+              });
+            },
+            onNavigateToAddExpense: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AddExpenseScreen()),
+              );
+              _loadDashboardData();
+            },
+            onNavigateToIncome: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => IncomeScreen()),
+              );
+              _loadDashboardData();
+            },
+            onNavigateToAnalytics: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => AnalyticsScreen()),
+              );
+              _loadDashboardData();
+            },
+            onNavigateToSettings: () async {
+              await Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => SettingsScreen()),
+              );
+            },
+            onAddExpense: (data) async {
+              final parts = data.split('|');
+              if (parts.length == 2) {
+                final description = parts[0];
+                final amount = double.tryParse(parts[1]) ?? 0.0;
+                // Here you would call your expense service to add the expense
+                // For now, just show a snackbar
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Adding expense: $description - \$${amount.toStringAsFixed(2)}')),
+                );
+              }
+            },
+            onAddIncome: (data) async {
+              final parts = data.split('|');
+              if (parts.length == 2) {
+                final description = parts[0];
+                final amount = double.tryParse(parts[1]) ?? 0.0;
+                // Here you would call your income service to add the income
+                // For now, just show a snackbar
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Adding income: $description - \$${amount.toStringAsFixed(2)}')),
+                );
+              }
+            },
+            onReadBalance: () {
+              _voiceService.speakBalance(balance.toDouble());
+            },
+            onReadMonthlyStats: () {
+              _voiceService.speakMonthlyStats(monthlyStats);
+            },
+          ),
+        ],
       ),
     );
   }

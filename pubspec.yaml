@@ -19,7 +19,7 @@ publish_to: 'none' # Rezove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ^3.7.0-209.1.beta
+  sdk: ">=3.4.0 <4.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -47,6 +47,9 @@ dependencies:
   animated_flip_counter: ^0.3.4
   path: ^1.9.1
   http_parser: ^4.1.2
+  speech_to_text: ^7.1.0
+  flutter_tts: ^3.8.5
+  socket_io_client: ^3.1.2
   
 flutter_launcher_icons: "^0.9.0"
 
